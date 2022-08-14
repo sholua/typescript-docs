@@ -1,4 +1,3 @@
-"use strict";
 // /////////////// Readonly properties
 // interface User {
 //     readonly name: string;
