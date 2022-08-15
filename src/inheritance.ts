@@ -1,42 +1,44 @@
-// Class with static property
-class User5 {
-  static secret = 1234;
-  private nickName: string = "shol";
+namespace Inheritance {
+  // Class with static property
+  class User {
+    static secret = 1234;
+    private nickName: string = "shol";
 
-  constructor(public name: string, public age: number) {}
+    constructor(public name: string, public age: number) {}
 
-  getPass(): string {
-    return `${this.name}/${User5.secret}`;
-  }
-}
-
-class John extends User5 {
-  name: string = "John";
-
-  constructor(age: number) {
-    super(name, age);
-  }
-}
-
-// Abstract class
-abstract class User6 {
-  constructor(public name: string, public age: number) {}
-
-  greet(): void {
-    // console.log(this.name);
+    getPass(): string {
+      return `${this.name}/${User.secret}`;
+    }
   }
 
-  abstract getPass(): string;
-}
+  class John extends User {
+    name: string = "John";
 
-class John2 extends User6 {
-  name: string = "john";
-
-  constructor(public age: number) {
-    super(name, age);
+    constructor(age: number) {
+      super(John.name, age);
+    }
   }
 
-  getPass(): string {
-    return "Hello";
+  // Abstract class
+  abstract class User2 {
+    constructor(public name: string, public age: number) {}
+
+    greet(): void {
+      // console.log(this.name);
+    }
+
+    abstract getPass(): string;
+  }
+
+  class John2 extends User2 {
+    name: string = "john";
+
+    constructor(public age: number) {
+      super(John2.name, age);
+    }
+
+    getPass(): string {
+      return "Hello";
+    }
   }
 }
