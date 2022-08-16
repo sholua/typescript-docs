@@ -15,7 +15,7 @@ namespace BasicTypes {
 
   // Void
   const greatUser = (): void => {
-    //   console.log("hello");
+    console.log("hello");
   };
 
   // Array type
